@@ -21,9 +21,7 @@ const Root: React.FC = () => {
   return (
     <div className={styles.container}>
       <h3 className={styles.welcome}>{t('welcomeText', 'Welcome to the O3 Clinician Homepage app')}</h3>
-      <p className={styles.explainer}>
-        {t('explainer', 'The following examples demonstrate some key features of the O3 framework')}.
-      </p>
+      <p className={styles.explainer}>{t('explainer', 'Below are clinic metrics')}.</p>
       {/* Greeter: demonstrates the configuration system */}
       {/* Boxes: demonstrates the extension system */}
       {/* <Boxes /> */}
