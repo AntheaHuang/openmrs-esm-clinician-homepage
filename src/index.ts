@@ -42,8 +42,10 @@ export const root = getAsyncLifecycle(() => import('./clinician-homepage.compone
 /**
  * The following are named exports for the extensions defined in this frontend modules. See the `routes.json` file to see how these are used.
  */
-export const redBox = getAsyncLifecycle(() => import('./boxes/extensions/red-box.component'), options);
+// export const redBox = getAsyncLifecycle(() => import('./boxes/extensions/red-box.component'), options);
 
-export const blueBox = getAsyncLifecycle(() => import('./boxes/extensions/blue-box.component'), options);
+// export const blueBox = getAsyncLifecycle(() => import('./boxes/extensions/blue-box.component'), options);
 
-export const brandBox = getAsyncLifecycle(() => import('./boxes/extensions/brand-box.component'), options);
+// export const brandBox = getAsyncLifecycle(() => import('./boxes/extensions/brand-box.component'), options);
+
+export const metrics = getAsyncLifecycle(() => import('./metrics/metrics.component'), options);
