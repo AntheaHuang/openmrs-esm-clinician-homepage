@@ -49,3 +49,5 @@ export const root = getAsyncLifecycle(() => import('./clinician-homepage.compone
 // export const brandBox = getAsyncLifecycle(() => import('./boxes/extensions/brand-box.component'), options);
 
 export const metrics = getAsyncLifecycle(() => import('./metrics/metrics.component'), options);
+
+export const patientQueue = getAsyncLifecycle(() => import('./patient-queue/patient-queue.component'), options);

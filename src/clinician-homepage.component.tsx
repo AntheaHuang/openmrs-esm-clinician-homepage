@@ -14,6 +14,7 @@ import { Boxes } from './boxes/slot/boxes.component';
 import Resources from './resources/resources.component';
 import Metrics from './metrics/metrics.component';
 import styles from './clinician-homepage.scss';
+import PatientQueue from './patient-queue/patient-queue.component';
 
 const Root: React.FC = () => {
   const { t } = useTranslation();
@@ -28,6 +29,7 @@ const Root: React.FC = () => {
       {/* PatientGetter: demonstrates data fetching */}
       {/* <Resources /> */}
       <Metrics />
+      <PatientQueue />
     </div>
   );
 };
