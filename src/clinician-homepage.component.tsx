@@ -14,12 +14,14 @@ import { Boxes } from './boxes/slot/boxes.component';
 import Resources from './resources/resources.component';
 import Metrics from './metrics/metrics.component';
 import styles from './clinician-homepage.scss';
+import Header from './header/header.component';
 
 const Root: React.FC = () => {
   const { t } = useTranslation();
 
   return (
     <div className={styles.container}>
+      <Header title={t('clinicianDashboard', 'Clinician Dashboard')} />
       <h3 className={styles.welcome}>{t('welcomeText', 'Welcome to the O3 Clinician Homepage app')}</h3>
       <p className={styles.explainer}>{t('explainer', 'Below are clinic metrics')}.</p>
       {/* Greeter: demonstrates the configuration system */}
@@ -28,6 +30,7 @@ const Root: React.FC = () => {
       {/* PatientGetter: demonstrates data fetching */}
       {/* <Resources /> */}
       <Metrics />
+
     </div>
   );
 };

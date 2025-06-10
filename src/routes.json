@@ -15,13 +15,34 @@
       "component": "blueBox",
       "slot": "Boxes"
     },
-        {
+    {
       "name": "Brand box",
       "component": "blueBox",
       "slot": "Boxes"
+    },
+    {
+      "name": "clinician-notes-open-button",
+      "component": "ClinicianNotesActionButton",
+      "slot": "action-menu-patient-chart-items-slot",
+      "order": 2
+    },
+    {
+      "name": "Clinician Notes Open Button",
+      "component": "ClinicianNotesActionButton",
+      "slot": "action-menu-patient-chart-items-slot",
+      "order": 10
     }
   ],
-  "pages": [
+  "workspaces": [
+    {
+      "name": "clinician-notes-workspace",
+      "title": "Clinician Notes",
+      "component": "notesOverview",
+      "type": "notes",
+      "canHide": true
+    }
+  ],
+"pages": [
     {
       "component": "root",
       "route": "clinician-homepage"

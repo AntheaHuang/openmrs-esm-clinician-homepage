@@ -1,0 +1,103 @@
+@use '@carbon/colors';
+@use '@carbon/layout';
+@use '@carbon/type';
+
+.header {
+  @include type.type-style('body-compact-02');
+  color: colors.$gray-70;
+  height: layout.$spacing-12;
+  background-color: colors.$white-0;
+  display: flex;
+  padding-left: layout.$spacing-03;
+  justify-content: space-between;
+  border-bottom: 1px solid colors.$gray-20;
+}
+
+.leftJustifiedItems {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+
+  & > div:nth-child(2) {
+    margin: layout.$spacing-05;
+
+    & > p:last-child {
+      white-space: nowrap;
+      @include type.type-style('heading-04');
+    }
+  }
+}
+
+.inPatientPictogram {
+  width: 4.5rem;
+  height: 4.5rem;
+  fill: var(--brand-03);
+}
+
+.rightJustifiedItems {
+  @include type.type-style('body-compact-02');
+  color: colors.$gray-70;
+  margin: layout.$spacing-03;
+  padding-top: layout.$spacing-04;
+}
+
+.dateAndLocation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: layout.$spacing-05;
+}
+
+.value {
+  margin-left: layout.$spacing-02;
+}
+
+.middot {
+  margin: 0 layout.$spacing-03;
+}
+
+.notesButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: colors.$gray-70;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  &:hover,
+  &:focus {
+    color: colors.$green-90;
+    outline: none;
+  }
+}
+
+.notesDropdown {
+  margin-top: layout.$spacing-02;
+  position: absolute;
+  background: colors.$white-0;
+  border: 1px solid colors.$gray-30;
+  padding: layout.$spacing-03;
+  border-radius: 4px;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 220px;
+}
+
+.notesTextarea {
+  width: 100%;
+  height: 6rem;
+  resize: vertical;
+  border: 1px solid colors.$gray-30;
+  border-radius: 4px;
+  padding: layout.$spacing-02;
+  font-family: inherit;
+  @include type.type-style('body-compact-02');
+  color: colors.$gray-90;
+
+  &:focus {
+    border-color: colors.$gray-70;
+    outline: none;
+  }
+}
