@@ -1,46 +1,38 @@
-![Node.js CI](https://github.com/openmrs/openmrs-esm-template-app/workflows/Node.js%20CI/badge.svg)
 
-# OpenMRS ESM Template App
+# OpenMRS Clinician Homepage
 
-This repository provides a starting point for creating your own
-[OpenMRS Microfrontend](https://wiki.openmrs.org/display/projects/OpenMRS+3.0%3A+A+Frontend+Framework+that+enables+collaboration+and+better+User+Experience).
+This repository is based on https://github.com/openmrs/openmrs-esm-template-app, for self-learning only. 
 
-For more information, please see the
-[OpenMRS Frontend Developer Documentation](https://o3-docs.openmrs.org/#/).
+This page is aimed at collecting important clinician info and status and displaying them in one single page. 
 
-In particular, the [Setup](https://o3-docs.openmrs.org/docs/frontend-modules/setup) section can help you get started developing microfrontends in general. The [Creating a microfrontend](https://o3-docs.openmrs.org/docs/recipes/create-a-frontend-module) section provides information about how to use this repository to create your own microfrontend.
+Relevant homepage and patient management page are needed. See below for detailed steps.
 
 ## Running this code
 
-```sh
-yarn  # to install dependencies
-yarn start  # to run the dev server
-```
+1. Get the home-page (git clone) from: https://github.com/openmrs/openmrs-esm-home
+2. Inside the home repo, do:
+   a. git checkout fb3c1ca
+   b. yarn
+   c. yarn start --sources 'packages/esm-home-app' --port 8085
+3. Open the patient-management repo (source: https://github.com/AntheaHuang/openmrs-esm-patient-management)
+4. Inside the patient-management repo, do:
+   a. yarn
+   b. yarn start --sources 'packages/esm-appointments-app' --sources 'packages/esm-service-queues-app' --port 8082
+5. Navigate to the {} button, and replace the url for esm-home-app with:http://localhost:8087/openmrs-esm-home-app.js.
+6. Open the clinician-homepage repo (source: https://github.com/AntheaHuang/openmrs-esm-clinician-homepage)
+7. Inside the clinician-homepage repo terminal, do:
+   a. yarn
+   b. yarn start
+8.On the localhost, navigate to http://localhost:8080/openmrs/spa/clinician-homepage.
+9. After clicking the {} button:
+   a. replace the url for esm-home-app with: http://localhost:8087/openmrs-esm-home-app.js ,
+   b. replace the url for appointment with: http://localhost:8083/openmrs-esm-appointments-app.js ,
+   c. replace the url for service-queue with: http://localhost:8084/openmrs-esm-service-queues-app.js
+   
 
-Once it is running, a browser window
-should open with the OpenMRS 3 application. Log in and then navigate to `/openmrs/spa/root`.
+## Final Effects:
+<img width="844" height="505" alt="Screenshot 2025-08-06 at 11 14 59 PM" src="https://github.com/user-attachments/assets/c97dfdca-cf08-4d54-b456-9334726f583c" />
 
-## Adapting the code
+<img width="842" height="506" alt="Screenshot 2025-08-06 at 11 15 17 PM" src="https://github.com/user-attachments/assets/d8e4113d-fe13-444f-98af-e87a47cf16bf" />
 
-1. Start by finding and replacing all instances of "template" with the name
-  of your microfrontend.
-2. Update `index.ts` as appropriate, at least changing the feature name and the page name and route.
-3. Rename the `root.*` family of files to have the name of your first page.
-4. Delete the contents of the objects in `config-schema`. Start filling them back in once you have a clear idea what will need to be configured.
-5. Delete the `greeter` and `patient-getter` directories, and the contents of `root.component.tsx`.
-6. Delete the contents of `translations/en.json`.
-7. Open up `.github/workflows` and adapt it to your needs. If you're writing
- a microfrontend that will be managed by the community, you might be able to
-  just replace all instances of `template` with your microfrontend's name.
-  However, if you're writing a microfrontend for a specific organization or
-  implementation, you will probably need to configure GitHub Actions differently.
-8. Delete the contents of this README and write a short explanation of what
-  you intend to build. Links to planning or design documents can be very helpful.
-
-At this point, you should be able to write your first page as a React application.
-
-Check out the [Medication dispensing app](https://github.com/openmrs/openmrs-esm-dispensing-app) for an example of a non-trivial app built using the Template.
-
-## Integrating it into your application
-
-Please see [Creating a Frontend Module](https://o3-docs.openmrs.org/docs/recipes/create-a-frontend-module).
+<img width="1512" height="906" alt="demo-screenshot" src="https://github.com/user-attachments/assets/05580313-9987-4d30-8f10-33fa133f25b2" />
